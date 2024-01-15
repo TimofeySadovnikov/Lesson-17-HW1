@@ -11,10 +11,23 @@ int main() {
     employees[4] = Employee("Brown", 1955, "Marketing Coordinator", 48000.0, "Associate's Degree");
 
     for (int i = 0; i < numberOfEmployees; ++i) {
-        cout << "Employee #" << i + 1 << ":\n";
+        cout << "Employee #" << i + 1 << ":\n\n";
         employees[i].displayInfo();
         cout << endl;
     }
+
+    cout << "Employees older than 60:\n\n";
+    int count = 0;
+
+    for (int i = 0; i < numberOfEmployees; ++i) {
+        if (2024 - employees[i].getBirthYear() > 60) {
+            employees[i].displayInfo();
+            cout << endl;
+            count++;
+        }
+    }
+
+    cout << "Total employees older than 60: " << count << endl;
 
     return 0;
 }
